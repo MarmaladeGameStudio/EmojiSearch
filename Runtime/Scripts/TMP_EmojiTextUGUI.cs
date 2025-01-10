@@ -192,12 +192,12 @@ namespace Kyub.EmojiSearch.UI
 
 
 #if TMP_2_1_0_PREVIEW_8_OR_NEWER
-        protected override Vector2 CalculatePreferredValues(ref float defaultFontSize, Vector2 marginSize, bool ignoreTextAutoSizing, bool isWordWrappingEnabled)
+        protected override Vector2 CalculatePreferredValues(ref float fontSize, Vector2 marginSize, bool isTextAutoSizingEnabled, TextWrappingModes textWrapMode)
         {
             if (m_emojiParsingRequired)
                 ParseInputTextAndEmojiCharSequence();
 
-            return base.CalculatePreferredValues(ref defaultFontSize, marginSize, ignoreTextAutoSizing, isWordWrappingEnabled);
+            return base.CalculatePreferredValues(ref fontSize, marginSize, isTextAutoSizingEnabled, textWrapMode);
         }
 #elif TMP_2_1_0_PREVIEW_3_OR_NEWER
         protected override Vector2 CalculatePreferredValues(float defaultFontSize, Vector2 marginSize, bool ignoreTextAutoSizing, bool isWordWrappingEnabled)
